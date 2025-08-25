@@ -1,0 +1,71 @@
+{
+  "1A": {
+    "cliente": "Vanessa María Martínez",
+    "fecha": "2024-10-30"
+  },
+  "1B": {
+    "cliente": "Diego Alvarado Canales",
+    "fecha": "2025-06-12"
+  },
+  "1C": {
+    "fecha": "2025-03-21"
+  },
+  "1D": {
+    "cliente": "Ivanna Martínez"
+  },
+  "1F": {
+    "cliente": "Diego Alvarado Canales",
+    "fecha": "2024-12-28"
+  },
+  "2A": {
+    "cliente": "Martha Rojas",
+    "fecha": "2025-03-24"
+  },
+  "2B": {
+    "cliente": "Carmen Nazar Pinel",
+    "fecha": "2024-12-28"
+  },
+  "2C": {
+    "cliente": "Paola Martínez",
+    "fecha": "2025-05-19"
+  },
+  "2F": {
+    "cliente": "Wady Contreras",
+    "fecha": "2025-03-21"
+  },
+  "3A": {
+    "cliente": "Raquel López",
+    "fecha": "2025-04-04"
+  },
+  "3B": {
+    "cliente": "Raquel López",
+    "fecha": "2025-03-04"
+  },
+  "3D": {
+    "cliente": "Abog. Carmen Canales y Alejandra"
+  },
+  "4A": {
+    "cliente": "Ana Miriam Rodríguez Sierra y Olgen Ricardo Chavez Zavala",
+    "fecha": "2025-06-18"
+  },
+  "4B": {
+    "cliente": "Roberto Nazar",
+    "fecha": "2025-06-18"
+  },
+  "4C": {
+    "cliente": "HC",
+    "fecha": "2024-12-27"
+  },
+  "5A": {
+    "cliente": "Abog. Saúl Reyes",
+    "fecha": "2024-08-28"
+  },
+  "5B": {
+    "cliente": "Memo / Gracia",
+    "fecha": "2024-05-27"
+  },
+  "5D": {
+    "cliente": "Ana Miriam Rodríguez Sierra y Olgen Ricardo Chavez Zavala",
+    "fecha": "2025-06-23"
+  }
+}
