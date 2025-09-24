@@ -144,7 +144,8 @@ export default function Page(){
 
         <div className="grid" style={{marginTop:14}}>
           {items.length ? items.map(a => {
-            const reservado = !a.disponible
+            const reservado = !!reservas?.[a.id] || !a.disponible;
+
             const r = reservas?.[a.id]
             return (
               <div key={a.id} className={`card ${reservado ? "reserved" : "available"}`} style={{opacity: reservado ? .95 : 1}}>
