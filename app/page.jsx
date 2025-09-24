@@ -14,20 +14,32 @@ export default function Page(){
   const [selectedLevel, setSelectedLevel] = useState('')
   const [modal, setModal] = useState({open:false, id:'', src:'', zoom:1, x:0, y:0})
 
-  useEffect(()=>{
-    async function load(){
-      try{
-        const r = await fetch('/apartments.json', {cache:'no-cache'})
-        if(!r.ok) throw new Error('HTTP '+r.status)
-        setData(await r.json())
-      }catch(e){ setError('No se pudo cargar apartments.json: '+e.message) }
-      try{
-        const rr = await fetch('/reservas.json', {cache:'no-cache'})
-        if(rr.ok){ setReservas(await rr.json()) }
-      }catch{}
+  useEffect(() => {
+  async function load() {
+    try {
+      // Si apartments.json no te da problemas, puedes dejarlo igual.
+      // Le pongo 'no-store' para ser consistente y evitar caché.
+      const r = await fetch('/apartments.json', { cache: 'no-store' });
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      setData(await r.json());
+    } catch (e) {
+      setError('No se pudo cargar apartments.json: ' + e.message);
     }
-    load()
-  }, [])
+
+    try {
+      // 👈 CAMBIO CLAVE: ahora leemos SIEMPRE lo último desde la API
+      const rr = await fetch('/api/reservas', { cache: 'no-store' });
+      if (rr.ok) {
+        setReservas(await rr.json());
+      } else {
+        console.warn('No se pudo leer /api/reservas, status:', rr.status);
+      }
+    } catch (e) {
+      console.warn('Error leyendo /api/reservas:', e);
+    }
+  }
+  load();
+}, []);
 
   const niveles = useMemo(()=> Array.from(new Set(data.map(a=>a.nivel))).sort((a,b)=>a-b), [data])
 
