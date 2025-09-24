@@ -8,12 +8,10 @@ export async function GET() {
     .order("code", { ascending: true });
 
   if (error) return NextResponse.json({ error: error.message }, { status: 500 });
-  // no-store para que el panel siempre vea lo último
   return NextResponse.json(data, { headers: { "Cache-Control": "no-store" } });
 }
 
 export async function PATCH(req) {
-  // Espera: { code: "1A", price?: 100000, status?: "reservado" }
   const body = await req.json();
   const { code, price, status } = body || {};
   if (!code) return NextResponse.json({ error: "Falta 'code'" }, { status: 400 });
