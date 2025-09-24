@@ -7,16 +7,13 @@ export default function Panel() {
   const [statusFilter, setStatusFilter] = useState("todos");
   const [savingCode, setSavingCode] = useState(null);
 
-  // Cargar unidades desde la API
   const load = async () => {
     const r = await fetch("/api/units", { cache: "no-store" });
     const data = await r.json();
     setRows(Array.isArray(data) ? data : []);
   };
-
   useEffect(() => { load(); }, []);
 
-  // Filtros básicos
   const filtered = useMemo(() => {
     return rows.filter(r => {
       const okQ = q ? r.code.toLowerCase().includes(q.toLowerCase()) : true;
@@ -25,11 +22,9 @@ export default function Panel() {
     });
   }, [rows, q, statusFilter]);
 
-  // Edición in-line
   const updateField = (code, field, value) => {
     setRows(prev => prev.map(r => r.code === code ? { ...r, [field]: value } : r));
   };
-
   const saveRow = async (row) => {
     setSavingCode(row.code);
     try {
@@ -51,7 +46,6 @@ export default function Panel() {
     }
   };
 
-  // Utilidad
   const fmtUSD = (v) => {
     if (v === null || v === undefined || v === "") return "";
     const n = Number(v);
@@ -68,17 +62,8 @@ export default function Panel() {
       <h1 className="text-xl font-semibold">Panel interno — Unidades</h1>
 
       <div className="flex gap-3 items-center flex-wrap">
-        <input
-          className="border px-3 py-2 rounded"
-          placeholder="Buscar por código (ej. 3C)…"
-          value={q}
-          onChange={e => setQ(e.target.value)}
-        />
-        <select
-          className="border px-3 py-2 rounded"
-          value={statusFilter}
-          onChange={e => setStatusFilter(e.target.value)}
-        >
+        <input className="border px-3 py-2 rounded" placeholder="Buscar por código (ej. 3C)…" value={q} onChange={e => setQ(e.target.value)} />
+        <select className="border px-3 py-2 rounded" value={statusFilter} onChange={e => setStatusFilter(e.target.value)}>
           <option value="todos">Todos</option>
           <option value="disponible">Disponible</option>
           <option value="reservado">Reservado</option>
@@ -103,44 +88,28 @@ export default function Panel() {
               <tr key={r.code} className="border-b">
                 <td className="py-2 pr-4 font-medium">{r.code}</td>
                 <td className="py-2 pr-4">
-                  <select
-                    className="border px-2 py-1 rounded"
-                    value={r.status}
-                    onChange={e => updateField(r.code, "status", e.target.value)}
-                  >
+                  <select className="border px-2 py-1 rounded" value={r.status} onChange={e => updateField(r.code, "status", e.target.value)}>
                     <option value="disponible">Disponible</option>
                     <option value="reservado">Reservado</option>
                     <option value="vendido">Vendido</option>
                   </select>
                 </td>
                 <td className="py-2 pr-4">
-                  <input
-                    className="border px-2 py-1 rounded w-40"
-                    type="number"
-                    step="0.01"
-                    value={r.price ?? 0}
-                    onChange={e => updateField(r.code, "price", e.target.value)}
-                    onBlur={e => updateField(r.code, "price", Number(e.target.value))}
-                  />
+                  <input className="border px-2 py-1 rounded w-40" type="number" step="0.01" value={r.price ?? 0}
+                    onChange={e => updateField(r.code, "price", e.target.value)} onBlur={e => updateField(r.code, "price", Number(e.target.value))}/>
                   <div style={{ opacity:.7 }}>{fmtUSD(r.price)}</div>
                 </td>
                 <td className="py-2 pr-4" title={r.updated_at || ""}>
                   {r.updated_at ? new Date(r.updated_at).toLocaleString("es-HN") : "—"}
                 </td>
                 <td className="py-2 pr-4">
-                  <button
-                    className="border px-3 py-1 rounded"
-                    disabled={savingCode === r.code}
-                    onClick={() => saveRow(r)}
-                  >
+                  <button className="border px-3 py-1 rounded" disabled={savingCode === r.code} onClick={() => saveRow(r)}>
                     {savingCode === r.code ? "Guardando…" : "Guardar"}
                   </button>
                 </td>
               </tr>
             ))}
-            {filtered.length === 0 && (
-              <tr><td className="py-4" colSpan={5}>Sin resultados</td></tr>
-            )}
+            {filtered.length === 0 && (<tr><td className="py-4" colSpan={5}>Sin resultados</td></tr>)}
           </tbody>
         </table>
       </div>
