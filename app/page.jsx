@@ -14,10 +14,9 @@ export default function Page(){
   const [selectedLevel, setSelectedLevel] = useState('')
   const [modal, setModal] = useState({open:false, id:'', src:'', zoom:1, x:0, y:0})
 
-  useEffect(() => {
+ useEffect(() => {
   async function load() {
     try {
-      // Mejor 'no-store' para evitar cualquier cacheo
       const r = await fetch('/apartments.json', { cache: 'no-store' });
       if (!r.ok) throw new Error('HTTP ' + r.status);
       setData(await r.json());
@@ -26,10 +25,14 @@ export default function Page(){
     }
 
     try {
-      // 👇 CLAVE: usa la API + cache busting
+      // Leemos SIEMPRE lo último y normalizamos las claves (trim + upper)
       const rr = await fetch('/api/reservas?v=' + Date.now(), { cache: 'no-store' });
       if (rr.ok) {
-        setReservas(await rr.json());
+        const raw = await rr.json();
+        const normalized = Object.fromEntries(
+          Object.entries(raw).map(([k, v]) => [String(k).trim().toUpperCase(), v])
+        );
+        setReservas(normalized);
       } else {
         console.warn('No se pudo leer /api/reservas, status:', rr.status);
       }
@@ -39,6 +42,7 @@ export default function Page(){
   }
   load();
 }, []);
+
 
 
   const niveles = useMemo(()=> Array.from(new Set(data.map(a=>a.nivel))).sort((a,b)=>a-b), [data])
