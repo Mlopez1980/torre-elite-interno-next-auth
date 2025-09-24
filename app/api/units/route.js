@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
-import { supabaseAdmin } from "@/app/lib/supabaseAdmin";
+// Import RELATIVO para evitar problemas de alias:
+import { supabaseAdmin } from "../../../lib/supabaseAdmin";
 
 export async function GET() {
   const { data, error } = await supabaseAdmin
