@@ -17,8 +17,7 @@ export default function Page(){
   useEffect(() => {
   async function load() {
     try {
-      // Si apartments.json no te da problemas, puedes dejarlo igual.
-      // Le pongo 'no-store' para ser consistente y evitar caché.
+      // Mejor 'no-store' para evitar cualquier cacheo
       const r = await fetch('/apartments.json', { cache: 'no-store' });
       if (!r.ok) throw new Error('HTTP ' + r.status);
       setData(await r.json());
@@ -27,8 +26,8 @@ export default function Page(){
     }
 
     try {
-      // 👈 CAMBIO CLAVE: ahora leemos SIEMPRE lo último desde la API
-      const rr = await fetch('/api/reservas', { cache: 'no-store' });
+      // 👇 CLAVE: usa la API + cache busting
+      const rr = await fetch('/api/reservas?v=' + Date.now(), { cache: 'no-store' });
       if (rr.ok) {
         setReservas(await rr.json());
       } else {
@@ -40,6 +39,7 @@ export default function Page(){
   }
   load();
 }, []);
+
 
   const niveles = useMemo(()=> Array.from(new Set(data.map(a=>a.nivel))).sort((a,b)=>a-b), [data])
 
