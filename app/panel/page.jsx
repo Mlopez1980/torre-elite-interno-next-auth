@@ -95,8 +95,11 @@ export default function Panel() {
                   </select>
                 </td>
                 <td className="py-2 pr-4">
-                  <input className="border px-2 py-1 rounded w-40" type="number" step="0.01" value={r.price ?? 0}
-                    onChange={e => updateField(r.code, "price", e.target.value)} onBlur={e => updateField(r.code, "price", Number(e.target.value))}/>
+                  <input className="border px-2 py-1 rounded w-40" type="number" step="0.01"
+                    value={r.price ?? 0}
+                    onChange={e => updateField(r.code, "price", e.target.value)}
+                    onBlur={e => updateField(r.code, "price", Number(e.target.value))}
+                  />
                   <div style={{ opacity:.7 }}>{fmtUSD(r.price)}</div>
                 </td>
                 <td className="py-2 pr-4" title={r.updated_at || ""}>
