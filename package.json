@@ -1,9 +1,4 @@
 {
-  "dependencies": {
-    "@supabase/supabase-js": "^2.45.2"
-  }
-}
-{
   "name": "torre-elite-interno-next-auth",
   "private": true,
   "version": "1.0.0",
@@ -13,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.45.2",
     "next": "14.2.5",
     "react": "18.3.1",
     "react-dom": "18.3.1"
