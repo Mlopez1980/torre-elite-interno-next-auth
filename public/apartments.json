@@ -189,7 +189,7 @@
     "area_m2": 44.55,
     "habitaciones": 1,
     "precio_usd": 118500.0,
-    "disponible": true
+    "disponible": false
   },
   {
     "id": "5A",
