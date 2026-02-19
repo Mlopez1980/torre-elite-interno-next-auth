@@ -4,7 +4,7 @@
     "nivel": 1,
     "area_m2": 82.95,
     "habitaciones": 2,
-    "precio_usd": null,
+    "precio_usd": 156030,
     "disponible": false
   },
   {
@@ -12,7 +12,7 @@
     "nivel": 1,
     "area_m2": 91.75,
     "habitaciones": 2,
-    "precio_usd": null,
+    "precio_usd": 156030,
     "disponible": false
   },
   {
@@ -36,7 +36,7 @@
     "nivel": 1,
     "area_m2": 82.79,
     "habitaciones": 2,
-    "precio_usd": 189129.0,
+    "precio_usd": 181000.0,
     "disponible": false
   },
   {
@@ -44,7 +44,7 @@
     "nivel": 1,
     "area_m2": 44.55,
     "habitaciones": 1,
-    "precio_usd": null,
+    "precio_usd": 98280,
     "disponible": false
   },
   {
@@ -52,7 +52,7 @@
     "nivel": 2,
     "area_m2": 82.95,
     "habitaciones": 2,
-    "precio_usd": null,
+    "precio_usd": 170890.17,
     "disponible": false
   },
   {
@@ -60,7 +60,7 @@
     "nivel": 2,
     "area_m2": 91.75,
     "habitaciones": 2,
-    "precio_usd": null,
+    "precio_usd": 170890,
     "disponible": false
   },
   {
@@ -68,7 +68,7 @@
     "nivel": 2,
     "area_m2": 46.0,
     "habitaciones": 1,
-    "precio_usd": null,
+    "precio_usd": 125000,
     "disponible": false
   },
   {
@@ -84,7 +84,7 @@
     "nivel": 2,
     "area_m2": 82.79,
     "habitaciones": 2,
-    "precio_usd": 193240.5,
+    "precio_usd": 191240.5,
     "disponible": true
   },
   {
@@ -92,7 +92,7 @@
     "nivel": 2,
     "area_m2": 44.55,
     "habitaciones": 1,
-    "precio_usd": null,
+    "precio_usd": 110000,
     "disponible": false
   },
   {
@@ -100,7 +100,7 @@
     "nivel": 3,
     "area_m2": 82.95,
     "habitaciones": 2,
-    "precio_usd": null,
+    "precio_usd": 152463.60,
     "disponible": false
   },
   {
@@ -108,7 +108,7 @@
     "nivel": 3,
     "area_m2": 91.75,
     "habitaciones": 2,
-    "precio_usd": null,
+    "precio_usd": 152463.60,
     "disponible": false
   },
   {
@@ -148,7 +148,7 @@
     "nivel": 4,
     "area_m2": 82.95,
     "habitaciones": 2,
-    "precio_usd": null,
+    "precio_usd": 207225,
     "disponible": false
   },
   {
@@ -156,7 +156,7 @@
     "nivel": 4,
     "area_m2": 91.75,
     "habitaciones": 2,
-    "precio_usd": null,
+    "precio_usd": 170890,
     "disponible": false
   },
   {
@@ -164,7 +164,7 @@
     "nivel": 4,
     "area_m2": 46.0,
     "habitaciones": 1,
-    "precio_usd": null,
+    "precio_usd": 109980,
     "disponible": false
   },
   {
@@ -188,7 +188,7 @@
     "nivel": 4,
     "area_m2": 44.55,
     "habitaciones": 1,
-    "precio_usd": 121680.0,
+    "precio_usd": 118500.0,
     "disponible": true
   },
   {
@@ -204,7 +204,7 @@
     "nivel": 5,
     "area_m2": 91.75,
     "habitaciones": 2,
-    "precio_usd": null,
+    "precio_usd": 182035,
     "disponible": false
   },
   {
@@ -220,7 +220,7 @@
     "nivel": 5,
     "area_m2": 82.79,
     "habitaciones": 2,
-    "precio_usd": null,
+    "precio_usd": 205575,
     "disponible": false
   },
   {
@@ -236,7 +236,7 @@
     "nivel": 5,
     "area_m2": 44.55,
     "habitaciones": 1,
-    "precio_usd": 126360.0,
+    "precio_usd": 124360.0,
     "disponible": true
   }
 ]
