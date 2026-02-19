@@ -30,9 +30,17 @@
     "fecha": "2024-12-28"
   },
   "2C": {
-    "cliente": "Paola Martínez",
-    "fecha": "2025-05-19"
+    "cliente": "Disponible",
+    "fecha": "2025-02-19"
   },
+   "2D": {
+    "cliente": "Nahum Anibal Rodríguez",
+    "fecha": "2026-01-22"
+  },
+   "2E": {
+    "cliente": "José Guillermo Gonzáles",
+    "fecha": "2026-01-12"
+  },   
   "2F": {
     "cliente": "Wady Contreras",
     "fecha": "2025-03-21"
@@ -53,8 +61,8 @@
     "cliente": "Alejandra María Alvarado Canales"
   },
    "3F": {
-    "cliente": "Marsella Fúnez",
-    "fecha": "2025-09-19"
+    "cliente": "Disponible",
+    "fecha": "2026-02-19"
   },
   "4A": {
     "cliente": "Ana Miriam Rodríguez Sierra y Olgen Ricardo Chavez Zavala",
@@ -65,8 +73,8 @@
     "fecha": "2025-06-18"
   },
   "4C": {
-    "cliente": "HC",
-    "fecha": "2024-12-27"
+    "cliente": "Bufete Canales Girbal",
+    "fecha": "2026-02-19"
   },
   "4F": {
     "cliente": "Mario Alejandro Mejía Rivera",
@@ -79,6 +87,10 @@
   "5B": {
     "cliente": "Memo / Gracia",
     "fecha": "2024-05-27"
+  },
+  "5C": {
+    "cliente": "Elias Octavio Álvarez",
+    "fecha": "2026-01-23"
   },
   "5D": {
     "cliente": "Ana Miriam Rodríguez Sierra y Olgen Ricardo Chavez Zavala",
