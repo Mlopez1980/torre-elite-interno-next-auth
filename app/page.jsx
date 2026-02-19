@@ -149,7 +149,12 @@ export default function Page(){
         <div className="grid" style={{marginTop:14}}>
           {items.length ? items.map(a => {
           const key = String(a.id).trim().toUpperCase();
-const reservado = !!reservas?.[key] || !a.disponible;
+const key = String(a.id).trim().toUpperCase();
+const r = reservas?.[key];
+
+// Disponible manda
+const reservado = (a.disponible === false);
+
 const r = reservas?.[key];
             return (
               <div key={a.id} className={`card ${reservado ? "reserved" : "available"}`} style={{opacity: reservado ? .95 : 1}}>
