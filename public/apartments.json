@@ -52,8 +52,8 @@
     "nivel": 2,
     "area_m2": 82.95,
     "habitaciones": 2,
-    "precio_usd": 170890.17,
-    "disponible": false
+    "precio_usd": 195000,
+    "disponible": true
   },
   {
     "id": "2B",
